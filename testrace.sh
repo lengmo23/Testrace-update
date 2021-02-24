@@ -16,11 +16,11 @@ ${Font_suffix}"
 
 check_system(){
 	if   [[ ! -z "`cat /etc/issue | grep -iE "debian"`" ]]; then
-		apt-get install traceroute mtr -y
+		apt-get install traceroute mtr unzip -y
 	elif [[ ! -z "`cat /etc/issue | grep -iE "ubuntu"`" ]]; then
-		apt-get install traceroute mtr -y
+		apt-get install traceroute mtr unzip -y
 	elif [[ ! -z "`cat /etc/redhat-release | grep -iE "CentOS"`" ]]; then
-		yum install traceroute mtr -y
+		yum install traceroute mtr unzip -y
 	else
 		echo -e "${Error} system not support!" && exit 1
 	fi
@@ -99,11 +99,11 @@ node_1(){
 			echo -e "${Info} 请重新选择" && read -p "输入数字以选择:" node
 		done
 
-	[[ "${node}" == "1" ]] && ISP_name="上海电信(天翼云)" && ip=101.227.255.45
-	[[ "${node}" == "2" ]] && ISP_name="厦门电信CN2"	     && ip=117.28.254.129
+	[[ "${node}" == "1" ]] && ISP_name="上海电信"	       && ip=101.89.132.9
+	[[ "${node}" == "2" ]] && ISP_name="厦门电信CN2"	       && ip=117.28.254.129
 	[[ "${node}" == "3" ]] && ISP_name="湖北襄阳电信"	     && ip=58.51.94.106
 	[[ "${node}" == "4" ]] && ISP_name="江西南昌电信"	     && ip=182.98.238.226
-	[[ "${node}" == "5" ]] && ISP_name="广东深圳电信"	     && ip=119.147.52.35
+	[[ "${node}" == "5" ]] && ISP_name="广东深圳电信"	     && ip=116.6.211.41
 	[[ "${node}" == "6" ]] && ISP_name="广州电信(天翼云)" && ip=14.215.116.1
 }
 node_2(){
@@ -162,12 +162,12 @@ repeat_test_alternative(){
 
 
 test_all(){
-	result_all	'101.227.255.45'	'上海电信(天翼云)'
-	result_all	'117.28.254.129'	'厦门电信CN2'
+	result_all	'116.6.211.41'	        '广东东莞CN2'
+	result_all	'101.95.110.149'	'上海电信'
 
-	result_all	'101.71.241.238'	'浙江杭州联通'
+	result_all	'153.36.202.5'		'江苏宿迁联通'
 
-	result_all	'112.17.0.106'		'浙江杭州移动'
+	result_all	'120.199.239.1'		'浙江杭州移动'
 
 	result_all	'202.205.6.30'		'北京教育网'
 
