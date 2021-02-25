@@ -15,7 +15,7 @@ cuz it's a script with Chinese language
 just one thing... you must run it with `bash`  
 like
 ```bash
-wget https://raw.githubusercontent.com/lengmo23/Testrace-update/master/testrace.sh -O testrace.sh && testrace.sh
+wget https://raw.githubusercontent.com/lengmo23/Testrace-update/master/testrace.sh -O testrace.sh && bash testrace.sh
 ```
 
 it's the best to say nothing !
